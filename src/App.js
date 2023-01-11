@@ -5,6 +5,12 @@ const mysql=require('mysql');
 const myConnection=require('express-myconnection');
 const app=express();
 
+
+//importartando riutes al sevidor
+
+const customerRoutes=require('./routes/Customer');
+
+
 //settings
 app.set('port', process.env.PORT || 3000); //puerto
 app.set('view engine', 'ejs'); //vistas
@@ -18,11 +24,14 @@ app.use(myConnection(mysql,{
     user: 'root',
     password: '',
     port: '3306',
-    bd: 'bd_users',
+    database: 'bd_users',
 
 },'single'))
 
 //routes
+
+app.use('/', customerRoutes);
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(app.get('port'), ()=>{
     console.log("carjo")
