@@ -7,9 +7,15 @@ constroller.list=(req,res)=>{
                 res.json(err)
             }
             console.log(users)
-            res.render('customer')
+            res.render('customer',{
+                data: users
+            })
         })
     })
+}
+constroller.save=(req, res)=>{
+    console.log(req.body);
+    res.send('wor5ks');
 }
 
 module.exports=constroller;
