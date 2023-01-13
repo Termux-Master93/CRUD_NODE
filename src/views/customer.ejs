@@ -1,0 +1,12 @@
+<% include('templates/_header') %>
+  <h2>customers</h2>
+  <form action="/add" method="POST">
+    <div>
+      <input type="text" placeholder="Dni" name="dni">
+      <input type="text" placeholder="Nombres" name="name">
+      <input type="text" placeholder="Apellidos" name="surnames">
+      <input type="text" placeholder="email" name="email">
+      <input type="submit" >
+    </div>
+  </form>
+  <% include('templates/_footer')%>
