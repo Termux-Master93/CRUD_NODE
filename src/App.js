@@ -28,6 +28,7 @@ app.use(myConnection(mysql,{
 
 },'single'))
 
+app.use(express.urlencoded({extended: false}));  //decodifica todo los datos del formulario para que el servidor los lea
 //routes
 
 app.use('/', customerRoutes);
